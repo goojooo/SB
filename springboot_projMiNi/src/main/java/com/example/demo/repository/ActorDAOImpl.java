@@ -16,7 +16,7 @@ import com.example.demo.vo.ActorVO;
 public class ActorDAOImpl implements IActorADAO {
 
 	private static final String selectQuery = "select actorID, actorName, actorAddr, actorCategory, actorFees from actors";
-
+	private static final String insertQuery = "";
 	@Override
 	public List<ActorVO> getAllActorDetails() throws SQLException {
 		
@@ -40,6 +40,17 @@ public class ActorDAOImpl implements IActorADAO {
 			
 		
 		return list;
+	}
+
+	@Override
+	public int registerActorRepo(ActorVO vo) throws SQLException {
+		int result = 0;
+		try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Bollywood","root","gojo");
+					PreparedStatement ps = con.prepareStatement(insertQuery)){
+			
+		}
+					
+		return 0;
 	}
 
 }

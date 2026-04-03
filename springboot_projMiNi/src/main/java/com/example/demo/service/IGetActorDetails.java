@@ -8,4 +8,8 @@ import com.example.demo.vo.ActorVO;
 public interface IGetActorDetails {
 
 	public List <ActorVO> showActorDetails() throws SQLException;
+
+	public String deleteActor(int id);
+
+	
 }
